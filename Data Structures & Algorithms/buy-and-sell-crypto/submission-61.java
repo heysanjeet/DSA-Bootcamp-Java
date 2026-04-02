@@ -1,16 +1,11 @@
 class Solution {
-    //Cretae a veriable to store maxprofit
-    //iterate a price from i
     public int maxProfit(int[] prices) {
         int maxProfit=0;
-        for(int i=0;i<prices.length;i++){
-            for(int j=i+1; j<prices.length;j++){
-                if(prices[j]>prices[i]){
-                    maxProfit=Math.max(maxProfit, prices[j]-prices[i]);
-                }
-
+        for(int buy=0;buy<prices.length;buy++){
+            for(int sell=buy+1;sell<prices.length;sell++){
+                 maxProfit=Math.max(maxProfit, prices[sell]-prices[buy]);
             }
         }
-        return maxProfit;
+       return maxProfit; 
     }
 }
